@@ -13,35 +13,36 @@ var result = 1;
 
 
 var fibonacci = function(number) {
-  var fibonacciArray = [];
-  var penultimate = 0;
-  var ultimate = 1;
-  var result;
+  var result = "";
 
-  if (number === 1) {
+  if (number < 1) {
+    return "Please enter a positive integer. Kthxbye."
+  } else if (number === 1) {
     return 0;
   } else if (number === 2) {
     return 1;
-  } else {
-    for (var i = 2; i < number; i++) {
-      result = ultimate + penultimate;
-      fibonacciArray.push(result);
-      penultimate = ultimate;
-      ultimate = result; 
-    };
+  } else {  
+    result = (fibonacci(number - 1) + fibonacci(number -2));
   };
   return result;
 };
 
 
-$(document).ready(function(){
+$(document).ready(function() {
   $("#factorial").submit(function(event){
     var number = $("#factorialInput").val();
     var result = factorial(number);
-    
     $("#factorialResult p").text(result);
 
     event.preventDefault();    
-
   });
+
+  $("#fibonacci").submit(function(event) {
+    var number = $("#fibonacciInput").val();
+    var result = fibonacci(number);
+    $("#fibonacciResult p").text(result);
+
+    event.preventDefault();
+  });
+
 });
