@@ -2,3 +2,37 @@ p {
   position: relative;
   margin: 8px;
 }
+
+body {
+background: url(../img/Dragon-Slayer.jpg) no-repeat center center fixed;
+max-width: 90%;
+margin-top: 90px;
+}
+
+button {
+  margin-bottom: 60px;
+}
+
+h1 {
+  text-shadow: 2px 2px 3px #EBD699;
+}
+.container {
+  text-align: right;
+  color: #CC0000;
+}
+label {
+  font-weight: normal;
+  color: #FFF5EA;
+}
+input {
+  background-color: #FFF5EA;
+}
+
+p {
+  font-size: 4em;
+  color: #FFF5EA;
+}
+
+#factorialResult, #fibonacciResult {
+  height: 65px;
+}
