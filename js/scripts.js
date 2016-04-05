@@ -11,20 +11,14 @@ var result = 1;
   return result;
 };
 
-
+var memo = [0,1]
 var fibonacci = function(number) {
-  var result = "";
-
-  if (number < 1) {
-    return "Please enter a positive integer. Kthxbye."
-  } else if (number === 1) {
-    return 0;
-  } else if (number === 2) {
-    return 1;
+  if(memo[number] != undefined) {
+    return memo[number]
   } else {  
-    result = (fibonacci(number - 1) + fibonacci(number -2));
-  };
-  return result;
+    memo[number] = (fibonacci(number - 1) + fibonacci(number -2))
+  }
+  return memo[number]
 };
 
 
